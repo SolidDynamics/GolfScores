@@ -1,0 +1,46 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "title": "A golf scorecard",
+  "definitions": {
+    "course": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "The name of the course."
+        },
+        "numberOfHoles": {
+          "type": "integer",
+          "description": "The number of holes on this course"
+        }
+       
+      }
+    }
+  },
+  "type": "object",
+  "properties": {
+    "course": {
+      "$ref": "#/definitions/course",
+      "description": "The course played"
+    },
+    "tees": {
+      "type": "string",
+      "description": "The tees played in this round"
+    },
+    "score": {
+      "type": "integer",
+      "description": "The total score on this round"
+    },
+    "holeScores": {
+      "type": "array",
+      "minItems": 1,
+      "maxLength": 18,
+      "items": {
+        "strokes": {
+          "type": "integer"
+        }
+      }
+    }
+    }
+  }
+

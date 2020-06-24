@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <StartWorkingDirectory>$(MSBuildProjectDirectory)</StartWorkingDirectory>
+    <AssemblyName>GolfScores.CLI</AssemblyName>
+  </PropertyGroup>
+
+  <ProjectExtensions><VisualStudio><UserProperties schema_4golfscorecardschema_1json__JsonSchema="GolfCourseSchema.json" /></VisualStudio></ProjectExtensions>
+
+  <ItemGroup>
+    <None Remove="Data\MyGolfNuts.csv" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Data\MyGolfNuts.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="LinqToCsv" Version="1.5.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.5" />
+    <PackageReference Include="NLog.Extensions.Logging" Version="1.6.4" />
+  </ItemGroup>
+
+</Project>
